@@ -1,0 +1,27 @@
+/* BillScreen.module.css */
+.wrapper { display: flex; flex-direction: column; min-height: 100vh; }
+.header { background: var(--green); padding: 14px 16px; display: flex; align-items: center; gap: 12px; position: sticky; top: 0; }
+.header h1 { font-size: 16px; font-weight: 600; color: #fff; font-family: var(--font-body); }
+.back { color: #fff; font-size: 22px; padding: 4px; }
+.loading { display: flex; align-items: center; justify-content: center; min-height: 100vh; }
+.empty { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; gap: 16px; padding: 24px; }
+.emptyIcon { font-size: 48px; }
+.empty p { font-size: 16px; color: var(--muted); }
+.goMenu { width: 100%; max-width: 280px; padding: 14px; border-radius: var(--radius); background: var(--green); color: #fff; font-size: 15px; font-weight: 600; font-family: var(--font-body); }
+.list { flex: 1; padding: 16px; }
+.listTitle { font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin-bottom: 12px; }
+.item { display: flex; align-items: center; gap: 12px; padding: 10px 0; border-bottom: 0.5px solid var(--border); }
+.itemQty { font-size: 13px; font-weight: 600; color: var(--muted); min-width: 28px; }
+.itemName { flex: 1; font-size: 14px; color: var(--dark); }
+.itemPrice { font-size: 14px; font-weight: 600; color: var(--green); }
+.totalBlock { margin: 0 16px; padding: 16px; background: var(--green); border-radius: var(--radius); display: flex; justify-content: space-between; align-items: center; }
+.totalBlock span { font-size: 14px; color: rgba(255,255,255,0.75); }
+.totalBlock strong { font-size: 22px; font-weight: 600; color: #fff; font-family: var(--font-display); }
+.actions { padding: 16px; display: flex; flex-direction: column; gap: 10px; }
+.reorderBtn { width: 100%; padding: 14px; border-radius: var(--radius); border: 1.5px solid var(--green); color: var(--green); font-size: 15px; font-weight: 600; font-family: var(--font-body); }
+.waiterBtn { width: 100%; padding: 14px; border-radius: var(--radius); background: #fff; border: 1.5px solid var(--border); color: var(--dark); font-size: 15px; font-weight: 600; font-family: var(--font-body); transition: background 0.15s; }
+.waiterBtn:hover { background: var(--cream); }
+.waiterBtn:disabled { opacity: 0.5; }
+.billBtn { width: 100%; padding: 14px; border-radius: var(--radius); background: var(--gold); color: #fff; font-size: 15px; font-weight: 600; font-family: var(--font-body); transition: opacity 0.15s; }
+.billBtn:disabled { opacity: 0.5; }
+.hint { text-align: center; font-size: 11px; color: var(--muted); padding: 0 16px 24px; }

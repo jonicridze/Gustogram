@@ -1,0 +1,39 @@
+/* MenuScreen.module.css */
+.wrapper { display: flex; flex-direction: column; min-height: 100vh; padding-bottom: 80px; }
+.loading { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; gap: 16px; color: var(--muted); }
+.header { background: var(--green); padding: 14px 16px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 10; }
+.headerInfo { display: flex; align-items: center; gap: 10px; }
+.logo { width: 34px; height: 34px; border-radius: 8px; background: rgba(255,255,255,0.15); color: #fff; font-family: var(--font-display); font-size: 18px; font-weight: 600; display: flex; align-items: center; justify-content: center; }
+.restName { font-size: 14px; font-weight: 600; color: #fff; }
+.tableBadge { font-size: 11px; color: rgba(255,255,255,0.7); }
+.billBtn { background: rgba(255,255,255,0.15); border-radius: 8px; padding: 6px 12px; font-size: 12px; color: #fff; font-family: var(--font-body); }
+.categories { display: flex; gap: 8px; padding: 10px 12px; background: var(--green); overflow-x: auto; scrollbar-width: none; }
+.categories::-webkit-scrollbar { display: none; }
+.catBtn { background: none; border: 1px solid rgba(255,255,255,0.3); border-radius: 20px; padding: 6px 14px; font-size: 12px; color: rgba(255,255,255,0.7); white-space: nowrap; font-family: var(--font-body); transition: all 0.15s; }
+.catActive { background: rgba(255,255,255,0.2); border-color: rgba(255,255,255,0.8); color: #fff; font-weight: 600; }
+.menuList { padding: 12px; display: flex; flex-direction: column; gap: 10px; }
+.card { background: #fff; border-radius: var(--radius); border: 0.5px solid var(--border); overflow: hidden; display: flex; gap: 12px; padding: 12px; }
+.cardImg { width: 72px; height: 72px; object-fit: cover; border-radius: var(--radius-sm); flex-shrink: 0; background: var(--cream); }
+.cardBody { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+.cardName { font-size: 14px; font-weight: 600; color: var(--dark); margin-bottom: 4px; }
+.cardDesc { font-size: 12px; color: var(--muted); line-height: 1.4; flex: 1; }
+.cardFooter { display: flex; align-items: center; justify-content: space-between; margin-top: 8px; }
+.cardPrice { font-size: 15px; font-weight: 600; color: var(--green); }
+.addBtn { width: 30px; height: 30px; border-radius: 8px; background: var(--green); color: #fff; font-size: 20px; display: flex; align-items: center; justify-content: center; transition: background 0.15s; }
+.addBtn:hover { background: var(--green-light); }
+.qtyCtrl { display: flex; align-items: center; gap: 8px; }
+.qtyBtn { width: 28px; height: 28px; border-radius: 6px; background: var(--cream); border: 0.5px solid var(--border); color: var(--green); font-size: 18px; display: flex; align-items: center; justify-content: center; }
+.qtyNum { font-size: 14px; font-weight: 600; min-width: 16px; text-align: center; }
+.crossSell { margin: 0 12px 12px; background: #fff; border-radius: var(--radius); padding: 12px; border: 0.5px solid var(--border); }
+.crossTitle { font-size: 12px; font-weight: 600; color: var(--dark); margin-bottom: 10px; }
+.crossList { display: flex; flex-direction: column; gap: 8px; }
+.crossCard { display: flex; align-items: center; gap: 10px; }
+.crossName { flex: 1; font-size: 13px; color: var(--dark); }
+.crossPrice { font-size: 13px; font-weight: 600; color: var(--green); }
+.addBtnSmall { width: 26px; height: 26px; border-radius: 6px; background: var(--green); color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; }
+.qtyCtrlSmall { display: flex; align-items: center; gap: 6px; font-size: 13px; }
+.qtyCtrlSmall button { width: 26px; height: 26px; border-radius: 6px; background: var(--cream); border: 0.5px solid var(--border); color: var(--green); font-size: 16px; cursor: pointer; }
+.floatingCart { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background: var(--green); color: #fff; border-radius: 24px; padding: 14px 24px; font-size: 15px; font-weight: 600; font-family: var(--font-body); display: flex; align-items: center; gap: 10px; box-shadow: 0 4px 20px rgba(38,89,60,0.4); min-width: 240px; justify-content: center; transition: transform 0.15s; z-index: 100; }
+.floatingCart:active { transform: translateX(-50%) scale(0.97); }
+.cartBadge { background: var(--gold); color: #fff; border-radius: 50%; width: 22px; height: 22px; font-size: 11px; display: flex; align-items: center; justify-content: center; font-weight: 700; }
+.cartSum { font-size: 13px; opacity: 0.85; }
