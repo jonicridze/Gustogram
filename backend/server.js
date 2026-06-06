@@ -1,37 +1,30 @@
-// ============================================================
-//  server.js — Gustogram TMA Backend
-//  Стек: Node.js + Express
-// ============================================================
-require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
+require('dotenv').config();
 
-const menuRouter    = require('./routes/menu');
-const orderRouter   = require('./routes/orders');
-const sessionRouter = require('./routes/sessions');
-
-const app  = express();
+const app = express();
 const PORT = process.env.PORT || 3001;
 
-// ── Middleware ────────────────────────────────────────────────
-app.use(cors({
-  origin: [
-    process.env.FRONTEND_URL,
-    'http://localhost:5173',  // Vite dev
-    'https://web.telegram.org',
-  ],
-  methods: ['GET', 'POST', 'PATCH'],
-}));
+app.use(cors());
 app.use(express.json());
 
-// ── Роуты ────────────────────────────────────────────────────
-app.use('/api/menu',     menuRouter);    // GET  /api/menu/:restaurantId
-app.use('/api/orders',   orderRouter);   // POST /api/orders  |  PATCH /api/orders/:sessionId
-app.use('/api/sessions', sessionRouter); // GET  /api/sessions/:restaurantId/:tableNum
+// Подключаем маршруты Клода
+try {
+    const menuRouter = require('./routes/menu');
+    const ordersRouter = require('./routes/orders');
+    const sessionsRouter = require('./routes/sessions');
+    
+    app.use('/api/menu', menuRouter);
+    app.use('/api/orders', ordersRouter);
+    app.use('/api/sessions', sessionsRouter);
+} catch (e) {
+    console.log("Ошибка подключения роутов:", e.message);
+}
 
-// ── Health-check ─────────────────────────────────────────────
-app.get('/health', (_, res) => res.json({ ok: true, ts: Date.now() }));
+app.get('/', (req, res) => {
+    res.send('Бэкенд Gustogram успешно работает!');
+});
 
 app.listen(PORT, () => {
-  console.log(`✅  Gustogram TMA backend запущен на порту ${PORT}`);
+    console.log(`Сервер запущен на порту ${PORT}`);
 });
