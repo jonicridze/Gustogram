@@ -8,7 +8,7 @@ import useStore           from './store/useStore';
 import WelcomeScreen from './pages/WelcomeScreen';
 import MenuScreen    from './pages/MenuScreen';
 import CartScreen    from './pages/CartScreen';
-import BillScreen    from './pages/BillScreen';
+import BillScreen    from './pages/BillScreen'; 
 
 export default function App() {
   const { parsedLocation, user } = useTelegram();
